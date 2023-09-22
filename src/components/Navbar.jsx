@@ -1,20 +1,29 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import {FaWallet} from "react-icons/fa";
 import Image from 'next/image';
-import { DM_Sans } from 'next/font/google'
-const dmSans = DM_Sans({ subsets: ['latin'] })
+import { RiMenu3Line } from 'react-icons/ri'
 
 const Navbar = () => {
+  const [showNavbar, setShowNavbar] = useState(false)
   return (
-    <nav className={`${dmSans.className}  flex justify-between  md:px-10 py-4 md:p-6 items-center`}>
-        <h1 className='text-lg  '>Legal E-Vault</h1>
-        <ul className='flex gap-4 md:gap-10 text-sm md:text-base items-center'>
+    <nav className='flex justify-between md:px-4 lg:px-10 py-6 items-center px-4'>
+        <h1>LegalChain</h1>
+        <RiMenu3Line 
+          className='text-2xl md:hidden'
+          onClick={() => setShowNavbar((prev) => !prev)}
+        />
+        <ul className={`flex z-10 flex-col md:flex-row absolute md:static top-16 right-8 bg-gray-900 bg-opacity-90 rounded-md md:p-0 p-4 gap-8 md:gap-10 items-center ${showNavbar ? "block" : "md:flex hidden"}`}>
             <li>About us</li>
             <li>Contact us</li>
-            <li> <button className=' bg-amber-600 p-3  rounded-md'><div className='flex items-center gap-3'>
-                <Image src={'/eth.svg'} alt='eth' width={15} height={10}/>
-                <h1>Connect wallet</h1>
-                </div> </button> </li>
+            <li> 
+              <button className='border p-2 rounded-md'>
+                <div className='flex items-center gap-3'>
+                  <Image src={'/eth.svg'} alt='eth' width={15} height={10}/>
+                  <h1>Connect wallet</h1>
+                </div> 
+              </button> 
+            </li>
         </ul>
     </nav>
   )
