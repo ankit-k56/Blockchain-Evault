@@ -36,15 +36,12 @@ const Form = () => {
   return (
     <form className='w-full py-8 flex flex-col items-center '>
       <h1 className='text-xl md:text-4xl font-bold py-3'>Upload FIR Image :</h1>
-      <p className='text-xs md:text-sm text-stone-400'>file Types supported : Pdf  </p>
+      <p className='text-xs md:text-sm text-stone-400'>file Types supported : Pdf , Jpg , Png </p>
       <div className='flex space-y-4'>
-            <input type="file" name='file' onChange={inpChangeHandler} required id="file" accept=".pdf" className="hidden"  />
+            <input type="file" name='file' onChange={inpChangeHandler} required id="file" accept=".pdf, .jpg, .png" className="hidden"  />
             {!inpData.file &&<label htmlFor="file" className="cursor-pointer bg-white w-[80vw] md:w-[30vw] hover:bg-gray-100 text-white font-medium py-[100px] md:py-[150px] px-[15vw] rounded-xl border-2  border-gray-400 sm:px-[13vw] ss:px-[15vw] xs:px-[20vw] xxs:px-[25vw]">
             </label>}
-            {/* {inpData.file && <Document file={inpData.file} onLoadSuccess={onDocumentLoadSuccess}>
-            <Page pageNumber={pageNumber} />
-          </Document>
-} */}
+            {inpData.file && <p>File choosen: {inpData.file}</p>}
         </div>
 
         <div className='flex text-sm md:text-base flex-col w-[80%] md:w-[50%] text-center py-5 space-y-3'>
