@@ -13,7 +13,7 @@ const Navbar = () => {
           className='text-2xl md:hidden'
           onClick={() => setShowNavbar((prev) => !prev)}
         />
-        <ul className={`flex z-10 flex-col md:flex-row absolute md:static top-16 right-8 bg-gray-900 bg-opacity-90 rounded-md md:p-0 p-4 gap-8 md:gap-10 items-center ${showNavbar ? "block" : "md:flex hidden"}`}>
+        <ul className={`flex z-10 flex-col md:flex-row absolute md:static top-16 right-8 bg-gray-900 md:bg-transparent bg-opacity-90 rounded-md md:p-0 p-4 gap-8 md:gap-10 items-center ${showNavbar ? "block" : "md:flex hidden"}`}>
             <li>About us</li>
             <li>Contact us</li>
             <li> 
