@@ -8,7 +8,7 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false)
   return (
     <nav className='flex justify-between md:px-4 lg:px-10 py-6 items-center px-4'>
-        <h1>LegalChain</h1>
+        <h1 className='txt-base md:text-lg'>LegalChain</h1>
         <RiMenu3Line 
           className='text-2xl md:hidden'
           onClick={() => setShowNavbar((prev) => !prev)}
@@ -17,7 +17,7 @@ const Navbar = () => {
             <li>About us</li>
             <li>Contact us</li>
             <li> 
-              <button className='border p-2 rounded-md'>
+              <button className=' p-3 bg-amber-600 rounded-md'>
                 <div className='flex items-center gap-3'>
                   <Image src={'/eth.svg'} alt='eth' width={15} height={10}/>
                   <h1>Connect wallet</h1>

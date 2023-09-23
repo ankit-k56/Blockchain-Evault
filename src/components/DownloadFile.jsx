@@ -21,7 +21,7 @@ const DownloadFile = () => {
                 value={hashValue}
                 onChange={handleChange}
             />
-            <Button variant="outlined" className='w-full mt-8'>Download</Button>
+            <Button  variant="outlined" className='w-full mt-8'>Download</Button>
         </div>
     </div>
   )

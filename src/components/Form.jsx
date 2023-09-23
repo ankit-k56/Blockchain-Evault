@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 // import { Document, Page } from 'react-pdf';
+import Button from '@mui/material/Button';
 
 const Form = () => {
 
@@ -36,8 +37,8 @@ const Form = () => {
   return (
     <>
     <form className='w-full flex flex-col items-center px-4'>
-      <h1 className='text-2xl md:text-4xl font-bold py-3'>Upload FIR Image :</h1>
-      <p className='text-sm text-stone-400'>file Types supported : JPG ,PNG  </p>
+      <h1 className='text-2xl md:text-4xl font-bold py-3'>Upload Legal Document :</h1>
+      <p className='text-sm text-stone-400'>file Types supported : Pdf, JPG ,PNG  </p>
       <div className='flex space-y-4 w-full justify-center'>
            <input type="file" name='file' onChange={inpChangeHandler} required id="file" accept=".pdf, .jpg, .png" className="hidden"  />
             {!inpData.file &&<label htmlFor="file" className="cursor-pointer bg-white w-[80vw] md:w-[30vw] hover:bg-gray-100 text-white font-medium py-[100px] md:py-[150px] px-[15vw] rounded-xl border-2  border-gray-400 sm:px-[13vw] ss:px-[15vw] xs:px-[20vw] xxs:px-[25vw]">
@@ -52,7 +53,7 @@ const Form = () => {
             <input type="text" onChange={inpChangeHandler} name='client' placeholder='Client Address' className='bg-transparent border-b-2 p-3 border-b-stone-700'/>
             <input type="text" onChange={inpChangeHandler} name='lawyer' placeholder='Lawyer Address' className='bg-transparent border-b-2 p-3 border-b-stone-700'/>
         </div>
-        <button className='bg-blue-700 w-full font-semibold text-lg mt-6 p-5 md:w-1/2 py-3 rounded-md'>Submit</button>
+        <Button className='bg-blue-500 w-full hover:bg-blue-500 md:w-1/2  p-5 py-3 text-white' color='primary'>Submit</Button>
     </form>
 
     {/* <form className='w-full py-8 flex flex-col items-center '>
